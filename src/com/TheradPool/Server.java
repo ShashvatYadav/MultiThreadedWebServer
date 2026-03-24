@@ -23,7 +23,6 @@ public class Server {
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("✅ Client connected: " + clientSocket.getRemoteSocketAddress());
 
-                // Submit client handling task to the thread pool
                 executor.submit(() -> handleClient(clientSocket));
             }
 
